@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static_folder/css/news_page1.css">
+    <title>蚂蚁新闻</title>
+    <script>
+        function test() {
+            var xhr = new XMLHttpRequest();
+            xhr.open('get', '/data', true);
+            xhr.send();
+            xhr.onreadystatechange = function () {
+                if (xhr.status == 200 && xhr.readyState == 4) {
+                    document.getElementById('news').innerHTML = xhr.responseText;
+                }
+            }
+        }
+        setInterval('test()', 1000 * 10);
+    </script>
+</head>
+<body>
+<div id="one_news">
+    <div id="news_top">
+        <div id="logo" style="float:left;width: 500px"><a href="/"><img src="/static_folder/image/logo.png" height="50"
+                                                                        width="150" style="float: right"></a>
+        </div>
+        <div id="search" style="float:left;width: 550px;margin-top: 10px">
+            <form action="/seek" method="post">
+                <input type="text" name="sousuo" placeholder="输入搜索内容" style="width: 400px;height:30px;">
+                <input style="height: 34px;background-color:rgba(41,127,200,0.98);color: white" type="submit"
+                       value="蚂蚁搜索"></form>
+        </div>
+        <div id="login" style="margin-left: 1150px; padding-top: 18px;">
+            {% if username %}
+            {% if grade==0 %}
+            用户:<a href="/login" style="text-decoration:none;"><span
+                style="color:#13b1d8">&nbsp;{{ username }}</span></a>
+            {% else %}
+            用户:<a href="/login" style="text-decoration:none;">
+            <span style="color:#13b1d8">&nbsp;{{ username }}&nbsp;</span>
+            <span style="color:#fff318">VIP</span>
+        </a>
+            {% endif %}
+            {% else %}
+            <a href="/login" style="text-decoration:none;"><span style="color:#13b1d8">登录</span></a>
+            <a href="/register" style="text-decoration:none;"><span style="color:#13b1d8;">注册</span></a>
+            {% endif %}
+        </div>
+    </div>
+    <div id="menu_news">
+        <div style="float:left;margin-left:430px;"><a href="/" style="text-decoration:none;"><span
+                style="font-size:20px;color: white">首页</span></a></div>
+        <div style="float:left;margin-left: 50px;"><a href="/guonei/1" style="text-decoration:none;"><span
+                style="font-size:20px;color: white">国内</span></a></div>
+        <div style="float:left;margin-left: 50px;"><a href="/guoji/1" style="text-decoration:none;"><span
+                style="font-size:20px;color: white">国际</span></a></div>
+        <div style="float:left;margin-left: 50px;"><a href="/yule/1" style="text-decoration:none;"><span
+                style="font-size:20px;color: white">娱乐</span></a></div>
+        <div style="float:left;margin-left: 50px;"><a href="/keji/1" style="text-decoration:none;"><span
+                style="font-size:20px;color: white">科技</span></a></div>
+        <div style="float:left;margin-left: 50px;"><a href="/tiyu/1" style="text-decoration:none;"><span
+                style="font-size:20px;color: white">体育</span></a></div>
+    </div>
+    <div id="news_content">
+        <div id="guanggao">
+        </div>
+        <div id="neirong">
+            <div style="weight:475px;height:500px;float:left;margin-top:40px;margin-left:40px;line-height:15px;">
+                <h1 style="position: absolute;left:208px;top:149px;">热点新闻</h1>
+                <div id="hot_news" style="position: absolute;left:213px;top:190px;">
+                {% for j in data1 %}
+                <ul>
+                    <li><a href="/{{ j[2] }}/page/{{ j[0] }}" target="_blank" style="text-decoration:none;">{{
+                        j[1][0:21] }}</a></li>
+                </ul>
+                {% endfor %}
+                </div>
+            </div>
+            <div style="weight:475px;height:500px;float:right;margin-top:40px;margin-right:40px;line-height: 15px;">
+                <h1 style="position: absolute;left:708px;top:149px;">即时新闻</h1>
+                <div id="news" style="position: absolute;left:713px;top:190px;">
+                    {% for j in data2 %}
+                    <ul>
+                        <li><a href="/{{ j[2] }}/page/{{ j[0] }}" target="_blank" style="text-decoration:none;">
+                            {{j[1][0:21] }}</a>
+                        </li>
+                    </ul>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div id="guanggao3"></div>
+        <div id="sign" style="text-align:center;"><span style="font-size:20px;color: white">Copyright©蚂蚁新闻</span></div>
+    </div>
+</div>
+</body>
+</html>

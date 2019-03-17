@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>蚂蚁新闻</title>
+    <link rel="stylesheet" type="text/css " href="/static_folder/css/news_page2.css"/>
+    <script type="text/javascript" src="/static_folder/js/news_page3_ad.js"></script>
+</head>
+<body>
+<div id="news">
+    <div id="news_top">
+        <div id="logo" style="float: left ">
+            <a href="/">
+                <img src="/static_folder/image/logo.png" height="50" width="150"/>
+            </a>
+        </div>
+        <div id="login" style="margin-left: 1150px; padding-top: 18px;">
+            {% if username %}
+            {% if grade==0 %}
+            用户:<a href="/login" style="text-decoration:none;"><span
+                style="color:#13b1d8">&nbsp;{{ username }}</span></a>
+            {% else %}
+            用户:<a href="/login" style="text-decoration:none;">
+            <span style="color:#13b1d8">&nbsp;{{ username }}&nbsp;</span>
+            <span style="color:#fff318">VIP</span>
+        </a>
+            {% endif %}
+            {% else %}
+            <a href="/login" style="text-decoration:none;"><span style="color:#13b1d8">登录</span></a>
+            <a href="/register" style="text-decoration:none;"><span style="color:#13b1d8;">注册</span></a>
+            {% endif %}
+        </div>
+    </div>
+    <div id="menu_news">
+        <div style="float:left;margin-left:270px;"><a href="/" style="text-decoration:none;"><span
+                style="font-size:20px;color: white">首页</span></a></div>
+        <div style="float:left;margin-left: 50px;"><a href="/guonei/1" style="text-decoration:none;"><span
+                style="font-size:20px;color: white">国内</span></a></div>
+        <div style="float:left;margin-left: 50px;"><a href="/guoji/1" style="text-decoration:none;"><span
+                style="font-size:20px;color: white">国际</span></a></div>
+        <div style="float:left;margin-left: 50px;"><a href="/yule/1" style="text-decoration:none;"><span
+                style="font-size:20px;color: white">娱乐</span></a></div>
+        <div style="float:left;margin-left: 50px;"><a href="/keji/1" style="text-decoration:none;"><span
+                style="font-size:20px;color: white">科技</span></a></div>
+        <div style="float:left;margin-left: 50px;"><a href="/tiyu/1" style="text-decoration:none;"><span
+                style="font-size:20px;color: white">体育</span></a></div>
+    </div>
+    <div id="news_content">
+        <div id="guanggao">
+            <br><br>
+            <a href="https://www.4008823823.com.cn/kfcios/Html/index.html" target="view_frame">
+                <img src="/static_folder/image/news_ad_kdj.gif" style="height:200px;width:200px"/></a><br><br>
+            <img src="/static_folder/image/ad1_page3.png" style="height:200px;width:200px"/>
+        </div>
+        <div id="neirong">
+            <div style="weight:475px;height:450px;float:left;margin-top:50px;margin-left:40px;line-height:15px;">
+                {% for i in data1 %}
+                <ul>
+                    <li><a href="/{{ i[3] }}/page/{{ i[4] }}"
+                           style="text-decoration: none"><span>{{ i[0][0:20] }}</span></a>
+                    </li>
+                </ul>
+                {% endfor %}
+            </div>
+            <div style="weight:475px;height:450px;float:right;margin-top:50px;margin-right:40px;line-height: 15px;">
+                {% for i in data2 %}
+                <ul>
+                    <li><a href="/{{ i[3] }}/page/{{ i[4] }}" target="_blank"
+                           style="text-decoration: none"><span>{{ i[0][0:20] }}</span></a>
+                    </li>
+                </ul>
+                {% endfor %}
+            </div>
+            <div id="tt" style="weight:950px;height:50px;clear:both;text-align: center ">
+                {% if page>1 %}
+                <a href="/{{ classes}}/{{ page-1 }}">上一页</a>
+                {% else %}
+                <a href="/{{ classes}}/{{ page }}">上一页</a>
+                {% endif %}
+                {% for i in range(4) %}
+                {% if page+i<=total_page %}
+                <a href="/{{ classes}}/{{ page+i }}">第{{ page+i }}页</a>
+                {% endif %}
+                {% endfor %}
+                {% if page < total_page %}
+                <a href="/{{ classes}}/{{ page+1 }}">下一页</a>
+                {% else %}
+                <a href="/{{ classes}}/{{ page }}">下一页</a>
+                {% endif %}
+            </div>
+        </div>
+        <div id="guanggao2"><br><br>
+            <a href="http://lpl.qq.com/es/rr/2018/?ADTAG=media.buy.baidu_shxbrand.fenlei_rukou1" target="_blank">
+                <img src="/static_folder/image/news_ad_yxlm.gif" style="height:200px;width:200px"/>
+            </a><br><br>
+            <a href="http://app.tanwan.com/htmlcode/17443.html" target="_blank">
+                <img src="/static_folder/image/news_ad_twly.gif" style="height:200px;width:200px"/>
+            </a>
+        </div>
+    </div>
+    <div id="guanggao3"></div>
+    <div id="sign" style="text-align:center;"><span style="font-size:20px;color: white">Copyright © 蚂蚁新闻</span></div>
+</div>
+</body>
+</html>

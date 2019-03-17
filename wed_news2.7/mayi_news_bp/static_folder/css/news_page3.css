@@ -1,0 +1,53 @@
+#css0{
+    width:1350px;
+    height:auto;
+    background-color: white;
+}
+#css1{
+    height:50px;
+    width:1350px;
+    background-color: white;
+}
+#css2{
+    background-color: rgba(29, 59, 154, 0.98);
+    height:30px;
+    width:1350px;
+}
+#guanggao{
+    background-color:white;
+    width: 200px;
+    height:auto;
+    float:left;
+    position:fixed;
+}
+#guanggao2{
+    background-color: white;
+    width: 200px;
+    height:auto;
+    float:right;
+    position:fixed;
+    left:1158px;
+}
+#css5{
+    background-color: white;
+    width:750px;
+    margin-left:300px;
+    height:auto;
+    margin-top: 0px;
+    line-height:50px;
+}
+#css6{
+    background-color: white;
+    width:1350px;
+    height:300px;
+}
+#css7{
+    background-color: rgba(29, 59, 154, 0.98);
+    width:1350px;
+    height:30px;
+}
+
+#passLog{
+    margin-left: 1250px;
+}
+

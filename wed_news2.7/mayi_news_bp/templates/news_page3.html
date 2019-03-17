@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>蚂蚁新闻</title>
+    <link rel="stylesheet" href="/static_folder/css/news_page3.css">
+    <link rel="stylesheet" href="/static_folder/css/news_page3.1.css"/>
+    <link rel="stylesheet" type="text/css" href="../static_folder/css/news_page3.2.css"/>
+    <script type="text/javascript" src="/static_folder/js/news_page3_ad.js"></script>
+    <script type="text/javascript" src="/static_folder/js/news_page3.1.js"></script>
+</head>
+<body>
+<div id="css0">
+    <div id="css1">
+        <div style="float:left">
+            <a href="/">
+                <img src="/static_folder/image/logo.png" height="50" width="150"/>
+            </a>
+        </div>
+        <div id="login" style="margin-left: 1150px; padding-top: 18px;">
+            {% if username %}
+            {% if grade==0 %}
+            用户:<a href="/login" style="text-decoration:none;"><span
+                style="color:#13b1d8">&nbsp;{{ username }}</span></a>
+            {% else %}
+            用户:<a href="/login" style="text-decoration:none;">
+            <span style="color:#13b1d8">&nbsp;{{ username }}&nbsp;</span>
+            <span style="color:#fff318">VIP</span>
+        </a>
+            {% endif %}
+            {% else %}
+            <a href="/login" style="text-decoration:none;"><span style="color:#13b1d8">登录</span></a>
+            <a href="/register" style="text-decoration:none;"><span style="color:#13b1d8;">注册</span></a>
+            {% endif %}
+        </div>
+    </div>
+    <div id="css2">
+        <div style="float:left;margin-left:270px;"><a href="/" style="text-decoration:none;">
+            <span style="font-size:20px;color: white">首页</span>
+        </a></div>
+        <div style="float:left;margin-left: 50px;"><a href="/guonei/1" style="text-decoration:none;">
+            <span style="font-size:20px;color: white">国内</span>
+        </a></div>
+        <div style="float:left;margin-left: 50px;"><a href="/guoji/1" style="text-decoration:none;">
+            <span style="font-size:20px;color: white">国际</span>
+        </a></div>
+        <div style="float:left;margin-left: 50px;"><a href="/yule/1" style="text-decoration:none;">
+            <span style="font-size:20px;color: white">娱乐</span>
+        </a></div>
+        <div style="float:left;margin-left: 50px;"><a href="/keji/1" style="text-decoration:none;">
+            <span style="font-size:20px;color: white">科技</span>
+        </a></div>
+        <div style="float:left;margin-left: 50px;"><a href="/tiyu/1" style="text-decoration:none;">
+            <span style="font-size:20px;color: white">体育</span>
+        </a></div>
+    </div>
+    <div id="guanggao">
+        <br><br>
+        <a href="https://www.4008823823.com.cn/kfcios/Html/index.html" target="_blank">
+            <img src="/static_folder/image/news_ad_kdj.gif" style="height:200px;width:200px"/></a><br><br>
+        <img src="/static_folder/image/ad1_page3.png" style="height:200px;width:200px"/></div>
+    <div id="guanggao2"><br><br>
+        <a href="http://lpl.qq.com/es/rr/2018/?ADTAG=media.buy.baidu_shxbrand.fenlei_rukou1" target="_blank">
+            <img src="/static_folder/image/news_ad_yxlm.gif" style="height:200px;width:200px"/>
+        </a><br><br>
+        <a href="http://app.tanwan.com/htmlcode/17443.html" target="_blank">
+            <img src="/static_folder/image/news_ad_twly.gif" style="height:200px;width:200px"/>
+        </a>
+    </div>
+    <div id="css5">
+        <div style="text-align: center"><h2>{{ title }}</h2></div>
+        <p style="text-align: right;">{{ date }}</p>
+        <div style="text-align: center">
+            {% for i in img %}
+            <img src="{{ i }}" style="height:auto;max-width:720px"/>
+            {% endfor %}
+        </div>
+        {% for i in content %}
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ i }}</p>
+        {% endfor %}
+        <div id="content" style="width: 700px; height: auto;margin-left:0px;margin-top:40px">
+            <div class="wrap">
+                <div class="comment">
+                    <div class="head-face">
+                        <img src="/static_folder/image/head_1.jpg">
+                        <p>用户</p>
+                    </div>
+                    <div class="content">
+                        <div class="cont-box">
+                            <textarea class="text" placeholder="请输入..."></textarea>
+                        </div>
+                        <div class="tools-box">
+                            <div class="operator-box-btn"><span class="face-icon">☺</span><span
+                                    class="img-icon">▧</span></div>
+                            <div class="submit-btn"><input type="button" onClick="out()" value="提交评论"/></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="info-show">
+                    <ul></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="css6"></div>
+    <div id="css7" style="clear:both;text-align:center;">
+        <span style="font-size:20px;color: white"> Copyright © 蚂蚁新闻</span>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="/static_folder/js/news_page3.2.js"></script>
+<script type="text/javascript" src="/static_folder/js/news_page3.3.js"></script>
+<script type="text/javascript">
+    $('.face-icon').SinaEmotion($('.text'));
+
+    function out() {
+        var inputText = $('.text').val();
+        $('#info-show ul').append(reply(AnalyticEmotion(inputText)));
+    }
+
+    var html;
+
+    function reply(content) {
+        html = '<li>';
+        html += '<div class="head-face">';
+        html += '<img src="/static_folder/image/head_1.jpg" / >';
+        html += '</div>';
+        html += '<div class="reply-cont">';
+        html += '<p class="username">小蚂蚁</p>';
+        html += '<p class="comment-body">' + content + '</p>';
+        html += '<p class="comment-footer">2018年07月6日　回复　点赞54　转发12</p>';
+        html += '</div>';
+        html += '</li>';
+        return html;
+    }
+</script>
+</html>

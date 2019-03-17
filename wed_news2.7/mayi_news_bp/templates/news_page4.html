@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>搜索内容</title>
+    <link rel="stylesheet" href="/static_folder/css/news_page4.css">
+</head>
+<body>
+<div id="css0">
+    <div id="css1">
+        <div style="float:left">
+            <a href="/">
+                <img src="/static_folder/image/logo.png" height="50" width="150"/>
+            </a>
+        </div>
+        <div id="login" style="margin-left: 1150px; padding-top: 18px;">
+            {% if username %}
+            {% if grade==0 %}
+            用户:<a href="/login" style="text-decoration:none;"><span
+                style="color:#13b1d8">&nbsp;{{ username }}</span></a>
+            {% else %}
+            用户:<a href="/login" style="text-decoration:none;">
+            <span style="color:#13b1d8">&nbsp;{{ username }}&nbsp;</span>
+            <span style="color:#fff318">VIP</span>
+        </a>
+            {% endif %}
+            {% else %}
+            <a href="/login" style="text-decoration:none;"><span style="color:#13b1d8">登录</span></a>
+            <a href="/register" style="text-decoration:none;"><span style="color:#13b1d8;">注册</span></a>
+            {% endif %}
+        </div>
+    </div>
+    <div id="css2">
+        <div style="float:left;margin-left:270px;"><a href="/" style="text-decoration:none;">
+            <span style="font-size:20px;color: white">首页</span>
+        </a></div>
+        <div style="float:left;margin-left: 50px;"><a href="/guonei/1" style="text-decoration:none;">
+            <span style="font-size:20px;color: white">国内</span>
+        </a></div>
+        <div style="float:left;margin-left: 50px;"><a href="/guoji/1" style="text-decoration:none;">
+            <span style="font-size:20px;color: white">国际</span>
+        </a></div>
+        <div style="float:left;margin-left: 50px;"><a href="/yule/1" style="text-decoration:none;">
+            <span style="font-size:20px;color: white">娱乐</span>
+        </a></div>
+        <div style="float:left;margin-left: 50px;"><a href="/keji/1" style="text-decoration:none;">
+            <span style="font-size:20px;color: white">科技</span>
+        </a></div>
+        <div style="float:left;margin-left: 50px;"><a href="/tiyu/1" style="text-decoration:none;">
+            <span style="font-size:20px;color: white">体育</span>
+        </a></div>
+    </div>
+
+    <div id="css3">
+        <h1>搜索结果</h1>
+        {% if data %}
+        {% if c>20 %}
+        {% for i in data[0:20] %}
+        <ul>
+            <li><a href="/{{ i[2] }}/page/{{ i[0] }}">{{ i[1] }}</a></li>
+        </ul>
+        {% endfor %}
+        {% else %}
+        {% for i in data %}
+        <ul>
+            <li><a href="/{{ i[2] }}/page/{{ i[0] }}">{{ i[1] }}</a></li>
+        </ul>
+        {% endfor %}
+        {% endif %}
+        {% else %}
+        <p>没有相关信息</p>
+        {% endif %}
+    </div>
+</div>
+</body>
+</html>

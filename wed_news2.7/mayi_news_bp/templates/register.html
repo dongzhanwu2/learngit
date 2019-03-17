@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static_folder/css/register.css">
+    <title>注册</title>
+</head>
+<body>
+<div style="width: 1350px">
+    <div id="logo"><a href="/"><img src="/static_folder/image/logo.png" height="40" width="85"/></a></div>
+    <div id="lanmu">
+        <div id="guonei"><a href="/guonei/1"><h3>国内</h3></a></div>
+        <div id="guoji"><a href="/guoji/1"><h3>国际</h3></a></div>
+        <div id="yule"><a href="/yule/1"><h3>娱乐</h3></a></div>
+        <div id="tiyu"><a href="/tiyu/1"><h3>体育</h3></a></div>
+        <div id="keji"><a href="/keji/1"><h3>科技</h3></a></div>
+    </div>
+    <div>
+        <div id="picture"><img src="/static_folder/image/new_2.jpg" height="300" width="400"/></div>
+        <form action="/register" method="post">
+            账&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号：<input type="text" name="username" placeholder="账号" required="required" minlength="6" maxlength="16"><br>
+            密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码：<input type="password" name="password" placeholder="密码" required="required" minlength="6" maxlength="16"><br>
+            验证密码：<input type="password" name="password1" placeholder="验证密码" required="required" minlength="6" maxlength="16"><br>
+            手机号码：<input type="text" name="phone" placeholder="手机号码" required="required"><br>
+            <input type="submit" value="注册" id="submit">
+            <input type="button" value="取消" id="submit1" onclick="window.location.href='/login'">
+        </form>
+    </div>
+    {% if errors %}
+    <script>
+        window.alert('{{ errors }}')
+    </script>
+    {% endif %}
+</div>
+</body>
+</html>

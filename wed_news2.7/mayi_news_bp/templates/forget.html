@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static_folder/css/forget.css">
+    <title>忘记密码</title>
+</head>
+<body>
+<div style="width: 1350px">
+    <div id="logo"><a href="/"><img src="/static_folder/image/logo.png" height="40" width="85"/></a></div>
+    <div id="lanmu">
+        <div id="guonei"><a href="/guonei/1"><h3>国内</h3></a></div>
+        <div id="guoji"><a href="/guoji/1"><h3>国际</h3></a></div>
+        <div id="yule"><a href="/yule/1"><h3>娱乐</h3></a></div>
+        <div id="tiyu"><a href="/tiyu/1"><h3>体育</h3></a></div>
+        <div id="keji"><a href="/keji/1"><h3>科技</h3></a></div>
+    </div>
+    <div>
+        <div id="picture"><img src="/static_folder/image/new_1.jpg" height="300" width="400"/></div>
+        <form action="/forget" method="post">
+            用户名：<input type="text" name="username" placeholder="账号" required="required"><br>
+            手机号：<input type="text" name="phone" placeholder="手机号码" required="required"><br>
+            新密码：<input type="password" name="password" placeholder="新密码" required="required" minlength="6"
+                       maxlength="16"><br>
+            <input type="submit" value="确认重置" id="submit">
+            <input type="submit" value="取消" id="submit1" onclick="window.location.href='/login'">
+        </form>
+    </div>
+
+    {% if errors %}
+    <script>
+        window.alert('{{ errors }}')
+    </script>
+    {% endif %}
+
+</div>
+</body>
+</html>

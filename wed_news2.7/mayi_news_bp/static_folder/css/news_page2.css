@@ -1,0 +1,54 @@
+#news {
+    width:1350px;
+    height:auto;
+    background-color: white;
+}
+
+#news_top {
+    height:50px;
+    width:1350px;
+    background-color: white;
+}
+#menu_news {
+    background-color: rgba(29, 59, 154, 0.98);
+    height:30px;
+    width:1350px;
+}
+#news_content {
+    width: 1350px;
+    clear: both;
+    background-color: rgba(127, 128, 126, 0.18);
+}
+
+#guanggao {
+    background-color: white;
+    width: 200px;
+    height: 500px;
+    float: left;
+}
+
+#neirong {
+    background-color: white;
+    width: 950px;
+    height: 500px;
+    float: left;
+}
+
+#guanggao2 {
+    background-color: white;
+    width: 200px;
+    height: 500px;
+    float: right
+}
+
+#guanggao3 {
+    width: 1350px;
+    height: 30px;
+    clear: both;
+    background-color: white;
+}
+#sign{
+    background-color: rgba(29, 59, 154, 0.98);
+    width:1350px;
+    height:30px;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static_folder/css/login.css">
+    <title>登陆</title>
+</head>
+<body>
+<div style="width: 1350px">
+    <div id="logo"><a href="/"><img src="/static_folder/image/logo.png" height="40" width="85"/></a></div>
+    <div id="lanmu">
+        <div id="guonei"><a href="/guonei/1"><h3>国内</h3></a></div>
+        <div id="guoji"><a href="/guoji/1"><h3>国际</h3></a></div>
+        <div id="yule"><a href="/yule/1"><h3>娱乐</h3></a></div>
+        <div id="tiyu"><a href="/tiyu/1"><h3>体育</h3></a></div>
+        <div id="keji"><a href="/keji/1"><h3>科技</h3></a></div>
+    </div>
+    <div>
+        <div id="picture"><img src="/static_folder/image/new_1.jpg" height="300" width="400"/></div>
+        <form action="/login" method="post">
+            账&nbsp;&nbsp;&nbsp;号：<input type="text" name="username" placeholder="账号" required="required"><a
+                href="/revise">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;修改密码</a><br>
+            密&nbsp;&nbsp;&nbsp;码：<input type="password" name="password" placeholder="密码" required="required"><a
+                href="/forget">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;忘记密码？</a><br>
+            <input type="button" value="注册" id="submit" onclick="window.location.href='/register'">
+            <input type="submit" value="登陆" id="submit1"><a href="/recharge">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;充值VIP</a>
+        </form>
+    </div>
+    {% if errors %}
+    <script>
+        window.alert('{{ errors }}')
+    </script>
+    {% endif %}
+
+    {% if pop %}
+    <script>
+        window.alert('{{ pop }}')
+    </script>
+    {% endif %}
+</div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static_folder/css/login.css">
+    <title>充值</title>
+</head>
+<body>
+<div style="width: 1350px">
+    <div id="logo">
+        <a href="/">
+            <img src="/static_folder/image/logo.png" height="40" width="85"/>
+        </a>
+    </div>
+    <div id="lanmu">
+        <div id="guonei"><a href="/guonei/1"><h3>国内</h3></a></div>
+        <div id="guoji"><a href="/guoji/1"><h3>国际</h3></a></div>
+        <div id="yule"><a href="/yule/1"><h3>娱乐</h3></a></div>
+        <div id="tiyu"><a href="/tiyu/1"><h3>体育</h3></a></div>
+        <div id="keji"><a href="/keji/1"><h3>科技</h3></a></div>
+    </div>
+    <div>
+        <div id="picture"><img src="/static_folder/image/new_1.jpg" height="300" width="400"/></div>
+        <form action="/recharge" method="post">
+            账&nbsp;&nbsp;&nbsp;号：<input type="text" name="username" placeholder="账号" required="required"><br>
+            密&nbsp;&nbsp;&nbsp;码：<input type="password" name="password" placeholder="密码" required="required"><br>
+            充&nbsp;&nbsp;&nbsp;值：<input type="text" name="money" placeholder="VIP每月只需30元" required="required"><br>
+            <input type="submit" value="确认充值" id="submit">
+            <input type="button" value="取消" id="submit1" onclick="window.location.href='/login'">
+        </form>
+    </div>
+    <div id="picture1" style="position: absolute; left: 1025px;top: 300px"><img src="/static_folder/image/shoukuan.jpg" height="200" width="200"/></div>
+    {% if errors %}
+    <script>
+        window.alert('{{ errors }}')
+    </script>
+    {% endif %}
+
+    {% if pop %}
+    <script>
+        window.alert('{{ pop }}')
+    </script>
+    {% endif %}
+</div>
+</body>
+</html>

@@ -1,0 +1,71 @@
+#logo {
+    background-color: #74a093;
+}
+
+#guonei {
+    float: left;
+    width: 270px;
+    text-align: center;
+    background-color: #00acc3
+}
+
+#guoji {
+    float: left;
+    width: 270px;
+    text-align: center;
+    background-color: #00acc3
+}
+
+#yule {
+    float: left;
+    width: 270px;
+    text-align: center;
+    background-color: #00acc3
+}
+
+#tiyu {
+    float: left;
+    width: 270px;
+    text-align: center;
+    background-color: #00acc3
+}
+
+#keji {
+    float: left;
+    width: 270px;
+    text-align: center;
+    background-color: #00acc3
+}
+
+#picture {
+    float: left;
+    margin-top: -123px;
+    margin-left: 275px
+}
+
+#picture1{
+    float: left;
+    margin-left: 50px;
+    margin-top: 300px;
+}
+
+form {
+    margin-left: 530px;
+    margin-top: 300px
+}
+
+#submit {
+    width: 80px;
+    margin-left: 16px;
+    margin-top: 30px
+}
+
+#submit1 {
+    width: 80px;
+    margin-left: 42px;
+    margin-top: 30px
+}
+
+a{
+    text-decoration: none;
+}

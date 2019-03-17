@@ -1,0 +1,26 @@
+#css0{
+    width:1350px;
+    height:auto;
+    background-color: white;
+}
+#css1{
+    height:50px;
+    width:1350px;
+    background-color: white;
+}
+#css2{
+    background-color: rgba(29, 59, 154, 0.98);
+    height:30px;
+    width:1350px;
+}
+#css3{
+    background-color: white;
+    height:auto;
+    width: 480px;
+    margin-left: 430px;
+}
+
+
+#passLog{
+    margin-left: 1250px;
+}
