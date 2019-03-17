@@ -3,5 +3,4 @@ Git is free software
 how to learning git??
 and you?
 dddd
-Creating a new branch is quick.
-Creating a new branch is quick & simple.
+Creating a new and   branch is quick.
